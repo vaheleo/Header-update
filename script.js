@@ -1,28 +1,41 @@
 
 
+
 var person=function(){
 	this.attributes={};
 
 }
+var headerChange=function(){
+	document.getElementById('userNameH').innerHTML=this.attributes.name;
+	document.getElementById('userNameP').innerHTML=this.attributes.name;
+	console.log(this.attributes.name);
+}
+
+
+var check=function(){
+	headerChange.call(this);
+	
+	console.log(this.attributes.name);
+}
 person.prototype={
 	set:function(p,v){
 		this.attributes[p]=v;
+		check.call(this);
 	},
 		get:function(p){
 		return this.attributes[p];
 	}
-}
-var headerChange=function(){
-	document.getElementByClassName('userName').innerHTML=vahe.attributes.name;
 
 }
 
-var nameSubmit=function(){
-	var newName=document.getElementByClassName('userName').value;
-	vahe.attributes.name=newName;
-	headerChange();
-	//console.log(newName);
-}
 vahe=new person;
 vahe.set('name','Vahe');
 vahe.set('age',35);
+
+
+var nameSubmit=function(){
+	var newName=document.getElementById('name').value;
+	vahe.set('name',newName);
+		
+}
+
