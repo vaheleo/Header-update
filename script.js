@@ -6,8 +6,8 @@ var person=function(){
 
 }
 var headerChange=function(){
-	document.getElementById('userNameH').innerHTML=this.attributes.name;
-	document.getElementById('userNameP').innerHTML=this.attributes.name;
+	document.getElementById('userNameH').innerHTML=this.get('name');
+	document.getElementById('userNameP').innerHTML=this.get('name');
 	console.log(this.attributes.name);
 }
 
